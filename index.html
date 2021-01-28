@@ -1,20 +1,54 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-wdth, initial-scale=1.0">
-        <title>Study Effect</title>
-        <link rel='stylesheet' href='style.css'>
-    </head>
-    <body>
-      <div class="card">
-        <div class="circle"></div>
-        <div class="content">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="styleSheet" href="./css/style.css" media="all" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Study Effect</title>
+
+</head>
+
+<body>
+  <!-- <div class="section1">
+    <div class="centralize">
+      <h1>Gabriel Simon Gianotti</h1>
+    </div>
+  </div>
+  <div> -->
+
+  <div class="section2">
+      <div class="cardFanco">
+        <div class="circleFanco"></div>
+        <div class="contentFanco">
           <h2>Fancon 9</h2>
-          <p>Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond.
-             Falcon 9 is the world’s first orbital class reusable rocket.</p>
-              <a href='#'>Buy trave to marte</a>
+          <p>Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and
+            safe
+            transport of people and payloads into Earth orbit and beyond.
+            Falcon 9 is the world’s first orbital class reusable rocket.</p>
+          <a href='#'>Buy trave to marte</a>
         </div>
-        <img src="./image/SpaceXDragon.png"/>
+        <img src="./image/SpaceXDragon.png" />
       </div>
-    </body>
+    </div>
+
+  <div class="section3">
+    <div class='boxBook'>
+      <h3 class='nameBook'>R$ 50</h3>
+      <a href="#" class='buyBook'>Buy</a>
+      <div class='circleBook'></div>
+      <img src='./image/book.png' class='imgbook'>
+    </div>
+  </div>
+  </div>
+  <script src='./scripts/vanilla-tilt.min.js'></script>
+  <script>
+    VanillaTilt.init(document.querySelector(".boxBook"), {
+      max: 25,
+      speed: 400
+    });
+  </script>
+</body>
+
 </html>

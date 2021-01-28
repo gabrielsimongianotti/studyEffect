@@ -11,19 +11,19 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
-.card {
+/* Fanco  */
+.cardFanco {
   position: relative;
   width: 600px;
   height: 350px;
-  /* background: #ccc; */
+
   border-radius: 20px;
   display: flex;
   align-items: center;
   transition: 0.5s;
 }
 
-.card .circle {
+.cardFanco .circleFanco {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,7 +33,7 @@ body {
   overflow: hidden;
 }
 
-.card .circle::before {
+.cardFanco .circleFanco::before {
   content: "";
   position: absolute;
   top: 0;
@@ -45,12 +45,12 @@ body {
   transition: 0.5s;
 }
 
-.card .circle:hover:before {
+.cardFanco .circleFanco:hover:before {
   background: #161736;
   clip-path: circle(400px at center);
 }
 
-.card img {
+.cardFanco img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,12 +60,12 @@ body {
   transition: 0.5s;
 }
 
-.card:hover img {
+.cardFanco:hover img {
   left: 72%;
   height: 700px;
 }
 
-.card .content {
+.cardFanco .contentFanco {
   position: relative;
   width: 50%;
   padding: 20px 20px 20px 40px;
@@ -75,13 +75,13 @@ body {
   visibility: hidden;
 }
 
-.card:hover .content {
+.cardFanco:hover .contentFanco {
   left: 0;
   opacity: 1;
   visibility: visible;
 }
 
-.card .content h2 {
+.cardFanco .contentFanco h2 {
   color: #fff;
   text-transform: uppercase;
   font-size: 2em;
@@ -89,12 +89,12 @@ body {
   margin-bottom: 5px;
 }
 
-.card .content p {
+.cardFanco .contentFanco p {
   color: #fff;
   font-size: 1em;
 }
 
-.card .content a {
+.cardFanco .contentFanco a {
   position: relative;
   color: #fff;
   padding: 10px 20px;
@@ -108,23 +108,86 @@ body {
 }
 
 @media (max-width: 991px) {
-  .card {
+  .cardFanco {
     width: auto;
     max-width: 350px;
     align-items: flex-start;
     margin: 10px;
   }
-  .card:hover {
+  .cardFanco:hover {
     height: 600px;
   }
-  .card .content {
+  .cardFanco .content {
     width: 100%;
     left: 0;
     padding: 30px;
   }
-  .card:hover img {
+  .cardFanco:hover img {
     top: 70%;
     left: 50%;
     height: 300px;
   }
+}
+
+.backgroundBook {
+  background-image: url("./image/backgroudBook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.contanerBook {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contanerBook .cardBook {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+}
+
+.contanerBook .cardBook .imgBx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.contanerBook .cardBook:hover .imgBx {
+  transform: translateY(-100px)
+}
+
+.contanerBook .cardBook:hover .imgBx img {
+  transform: translate(20px, -40px) rotate(25deg) scale(1.4);
+}
+
+.contanerBook .cardBook .imgBx img {
+  max-width: 100%;
+  margin: 0 0 20px;
+  transition: 0.5s ease-in-out;
+}
+.contanerBook .cardBook .imgBx h2 {
+  color: #fff;
+  font-weight: 600
+}
+.contanerBook .cardBook .imgBx h3 {
+  color: #fff;
+  /* font-weight: 600 */
 }

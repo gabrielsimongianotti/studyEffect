@@ -1,2 +1,3 @@
-# studyEffect
-Repository for HTML, CSS studies 
+# portfolio
+
+https://gabrielsimongianotti.github.io/portfolio/

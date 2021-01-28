@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+  background: #131313;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section1 {
+  background-image: url("../image/tambineio.jpg");
+  background-size: cover;
+  display: flex;
+  height: 70vh;
+  color: white;
+}
+
+.centralize {
+  margin: auto;
+  text-align: center;
+}
+
+.section2 {
+  display: flex;
+  background-color: #e5e6ea;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  padding: 2px 16px;
+  /* color: #081b11; */
+}
+
+.imagemProjeto {
+  width: 20vw;
+  height: auto;
+  padding: 15px 15px 15px 15px;
+}
+
+.code {
+  width: 7%;
+}
+
+footer {
+  /* position: fixed; */
+  /* width: 100%; */
+  background-color: black;
+  padding: 30px;
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .section2 {
+    background-color: white;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 80%;
+    display: inline-block;
+  }
+  .imagemProjeto {
+    width: 70vw;
+  }
+  .section3 {
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 80%;
+    display: inline-block;
+  }
+  .html {
+    background-color: #e5e6eac0;
+  }
+  .code {
+    width: 20%;
+  }
+}
+
+.cardFanco {
+  position: relative;
+  width: 600px;
+  height: 350px;
+
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.cardFanco .circleFanco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cardFanco .circleFanco::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2e3365;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.cardFanco .circleFanco:hover:before {
+  background: #161736;
+  clip-path: circle(400px at center);
+}
+
+.cardFanco img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.cardFanco:hover img {
+  left: 82%;
+  height: 700px;
+}
+
+.cardFanco .contentFanco {
+  position: relative;
+  width: 50%;
+  padding: 20px 20px 20px 40px;
+  pointer-events: none;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cardFanco:hover .contentFanco {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.cardFanco .contentFanco h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+
+.cardFanco .contentFanco p {
+  color: #fff;
+  font-size: 1em;
+}
+
+.cardFanco .contentFanco a {
+  position: relative;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: -5px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .cardFanco {
+    width: auto;
+    max-width: 350px;
+    align-items: flex-start;
+    margin: 10px;
+  }
+  .cardFanco:hover {
+    height: 600px;
+  }
+  .cardFanco .content {
+    width: 100%;
+    left: 0;
+    padding: 30px;
+  }
+  .cardFanco:hover img {
+    top: 70%;
+    left: 50%;
+    height: 300px;
+  }
+}
+/*book*/
+
+.section3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* width: 1200px; */
+  min-height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.section3 .boxBook {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.section3 .boxBook::before {
+  content: "Saraiva";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgb(250, 237, 50);
+  font-size: 3em;
+  font-weight: 900;
+  font-style: italic;
+  opacity: 0;
+}
+
+.section3 .boxBook::after {
+  content: "Saraiva";
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  color: rgb(250, 237, 50);
+  font-size: 3em;
+  font-weight: 900;
+  font-style: italic;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.section3 .boxBook:hover::before,
+.section3 .boxBook:hover::after {
+  opacity: 0.1;
+}
+
+.section3 .boxBook .nameBook {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3D(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.section3 .boxBook:hover .nameBook {
+  top: 10px;
+  opacity: 1;
+}
+
+.section3 .boxBook .buyBook {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, 0, 75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.section3 .boxBook:hover .buyBook {
+  bottom: 30px;
+  opacity: 1;
+}
+
+.section3 .boxBook .circleBook {
+  position: absolute;
+  top: 150px;
+  left: 34%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: 0.5s;
+  background: #fff;
+  transform-style: preserve-3d;
+  z-index: 10;
+  opacity: 1;
+  transform: translate3d(-50px, -50px, 40px);
+}
+
+/* .section3 .boxBook:hover .circleBook {
+  opacity: 0;
+} */
+
+.section3 .boxBook .imgbook {
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  max-width: 400px;
+  transition:0.5s;
+  z-index:11;
+  transition:0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50px, -50px, 70px);
+}
