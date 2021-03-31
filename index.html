@@ -11,27 +11,86 @@
 </head>
 
 <body>
-  <!-- <div class="section1">
-    <div class="centralize">
-      <h1>Gabriel Simon Gianotti</h1>
+
+  <script src="scripts/three/three.js"></script>
+  <script src="scripts/three/OrbitControls.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.outerWidth - 16, window.innerHeight);
+
+    document.body.appendChild(renderer.domElement);
+    const loader = new THREE.TextureLoader();
+    const textureLoader = new THREE.TextureLoader();
+    const geometry = new THREE.SphereGeometry(10, 32, 32);
+    const geometryMoon = new THREE.SphereGeometry(3, 32, 32);
+
+    const materialEarth = new THREE.MeshBasicMaterial({
+      map: loader.load("image/three/textures/earth_atmos.jpg")
+    });
+
+    const materialMoon = new THREE.MeshBasicMaterial({
+      map: loader.load("image/three/textures/moonmap4k.jpg")
+    });
+
+    const planet = new THREE.Mesh(geometry, materialEarth);
+    const moon = new THREE.Mesh(geometryMoon, materialMoon, "image/three/universe.jpg");
+
+    loader.setCrossOrigin("");
+
+    const bgTexture = loader.load("image/three/universe.jpg",
+      function (texture) {
+        var img = texture.image;
+        bgWidth = img.width;
+        bgHeight = img.height;
+        resize();
+      }
+    );
+
+    scene.background = bgTexture;
+    
+    scene.add(planet);
+    
+    scene.add(moon);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    moon.position.x += 20
+
+    camera.position.z = 30;
+    camera.position.y = 15;
+    camera.position.x = 25;
+
+    moon.z = 70;
+
+    const animate = function () {
+      setTimeout(requestAnimationFrame(animate), 5000)
+
+      planet.rotation.y += 0.05;
+      moon.rotation.y -= 0.02;
+      scene.rotation.y -= 0.02;
+
+      controls.update();
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+  </script>
+  <div class="section2">
+    <div class="cardFanco">
+      <div class="circleFanco"></div>
+      <div class="contentFanco">
+        <h2>Fancon 9</h2>
+        <p>Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and
+          safe transport of people and payloads into Earth orbit and beyond.</p>
+        <a href='#'>Buy trave to marte</a>
+      </div>
+      <img src="./image/SpaceXDragon.png" />
     </div>
   </div>
-  <div> -->
-
-  <div class="section2">
-      <div class="cardFanco">
-        <div class="circleFanco"></div>
-        <div class="contentFanco">
-          <h2>Fancon 9</h2>
-          <p>Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and
-            safe
-            transport of people and payloads into Earth orbit and beyond.
-            Falcon 9 is the world’s first orbital class reusable rocket.</p>
-          <a href='#'>Buy trave to marte</a>
-        </div>
-        <img src="./image/SpaceXDragon.png" />
-      </div>
-    </div>
+  </div>
 
   <div class="section3">
     <div class='boxBook'>
@@ -41,7 +100,6 @@
       <img src='./image/book.png' class='imgbook'>
     </div>
   </div>
-  </div>
   <script src='./scripts/vanilla-tilt.min.js'></script>
   <script>
     VanillaTilt.init(document.querySelector(".boxBook"), {
@@ -49,6 +107,8 @@
       speed: 400
     });
   </script>
+
+
 </body>
 
 </html>
